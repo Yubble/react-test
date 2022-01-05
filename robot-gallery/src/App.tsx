@@ -4,21 +4,23 @@
  * @Author: 刘燕保
  * @Date: 2022-01-04 21:10:33
  */
-import './App.css';
+// import './App.css';
 import robots from './mockData/robot.json'
 import Robot from './components/Robot'
+// 将样式以对象的方式加载进来，避免全局污染
+import style from './App.module.css'
 
-const html = "<img onerror='alert(\"Hacked!\")' src='invalid-image' />"
-const jsHacked = "javascript: alert('Hacked');"
+// const html = "<img onerror='alert(\"Hacked!\")' src='invalid-image' />"
+// const jsHacked = "javascript: alert('Hacked');"
 function App() {
   return (
     // react-jsx的规则，需要加<></>进行包裹
-    <>
-      <a href={jsHacked}>123</a>
-      <ul>
+    <div className={style.app}>
+      {/* <a href={jsHacked}>123</a> */}
+      <ul className={style.robotList}>
         {robots.map(r => <Robot id={r.id} name={r.name} email={r.email} />)}
       </ul>
-    </>
+    </div>
   );
 }
 
