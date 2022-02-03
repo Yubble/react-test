@@ -5,6 +5,7 @@
  * @Date: 2022-01-04 21:10:33
  */
 import React, { useState, useEffect } from 'react'
+import RobotDiscount from './components/RobotDiscount'
 import Robot from './components/Robot'
 // 将样式以对象的方式加载进来，避免全局污染
 import style from './App.module.css'
@@ -13,7 +14,9 @@ import ShoppingCart from './components/ShoppingCart'
 
 // const html = "<img onerror='alert(\"Hacked!\")' src='invalid-image' />"
 // const jsHacked = "javascript: alert('Hacked');"
-interface Props {}
+interface Props {
+  username: string
+}
 
 interface State {
   robotGallery: any[],
@@ -67,7 +70,12 @@ const App:React.FC = (props) => {
       {(!error || error != '') && <div>网站出错：{error}</div>}
       {!loading ? (
         <ul className={style.robotList}>
-          {robotGallery.map(r => <Robot id={r.id} name={r.name} email={r.email} />)}
+          {robotGallery.map((r, index) => 
+            index % 2 == 0 ?
+              ( <RobotDiscount id={r.id} name={r.name} email={r.email} /> )
+            :
+              ( <Robot id={r.id} name={r.name} email={r.email} /> )
+          )}
         </ul>
       ) : (
         <h2>loading ...</h2>
