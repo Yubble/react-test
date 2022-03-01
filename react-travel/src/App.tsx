@@ -17,7 +17,7 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/signIn' element={<SignInPage />}></Route>
           <Route path='/register' element={<RegisterPage />}></Route>
-          <Route path='/detail' element={<DetailPage />}></Route>
+          <Route path='/detail/:touristRouteId' element={<DetailPage />}></Route>
           <Route path='/*' element={<h1>404 not Found</h1>}></Route>
         </Routes>
       </BrowserRouter>
