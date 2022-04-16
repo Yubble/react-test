@@ -7,7 +7,7 @@
 import React from 'react';
 import style from './App.module.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { HomePage, RegisterPage, SignInPage, DetailPage, CallbackHookDemo } from './pages'
+import { HomePage, RegisterPage, SignInPage, DetailPage } from './pages'
 
 function App() {
   return (
@@ -18,7 +18,6 @@ function App() {
           <Route path='/signIn' element={<SignInPage />}></Route>
           <Route path='/register' element={<RegisterPage />}></Route>
           <Route path='/detail/:touristRouteId' element={<DetailPage />}></Route>
-          <Route path='/test' element={<CallbackHookDemo />}></Route>
           <Route path='/*' element={<h1>404 not Found</h1>}></Route>
         </Routes>
       </BrowserRouter>
