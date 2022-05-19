@@ -57,11 +57,11 @@ function GetChildComp () {
 }
 
 // 用于记录全局变量
-function RecordGlobal () {
+function RecordGlobal ({ppp}) {
     const [ count, setCount ] = useState(0)
+    const pRef = useRef(ppp)
     const timer = useRef(null)
     let timer2
-    console.log('出发重复渲染')
 
     useEffect(() => {
         console.log('初始化一次')
@@ -100,6 +100,11 @@ function RecordGlobal () {
 }
 
 export const TUseRef = () => {
+    const [ppp, setPPP] = useState(111)
+
+    setTimeout(() => {
+        setPPP(333)
+    }, 5000)
     return (
         <div>
             <h2>测试useRef</h2>
@@ -108,7 +113,7 @@ export const TUseRef = () => {
             <p>2、映射子组件实例</p>
             <GetChildComp />
             <p>3、记录全局变量</p>
-            <RecordGlobal />
+            <RecordGlobal ppp = {ppp} />
         </div>
     )
 }
