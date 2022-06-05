@@ -69,6 +69,7 @@ function RecordGlobal ({ppp}) {
           setCount(count => count + 1)
         }, 500)
     
+        console.log('给延时器赋值, timer is ', id)
         timer.current = id
         timer2 = id
         // return () => {
@@ -79,6 +80,7 @@ function RecordGlobal ({ppp}) {
 
     // useCallback首先记录timer2，不会因为函数重复渲染而再次给timer2变量赋值，导致无法停止计时器
     const onClick = useCallback(() => {
+        console.log('useCallback 运行, timer is ', timer2)
         clearInterval(timer2)
     }, [])
 
@@ -92,7 +94,7 @@ function RecordGlobal ({ppp}) {
 
     return (
         <div>
-          点击次数: { count }
+          累加次数: { count }
           <button onClick={onClick}>普通</button>
           <button onClick={onClickRef}>useRef</button>
         </div>

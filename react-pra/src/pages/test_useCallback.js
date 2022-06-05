@@ -17,6 +17,7 @@ const Child = ({ callback }) => {
 const set = new Set()
 
 export const TUseCallback = () => {
+    console.log('---- 父组件重绘 ----')
     const [count, setCount] = useState(1)
     const [value, setValue] = useState('')
 
@@ -37,9 +38,10 @@ export const TUseCallback = () => {
     return (
         <div>
             <h4>count: {count}</h4>
-            <h4>size: {set.size}</h4>
+            <h4>set size: {set.size}</h4>
             <div>
                 <button onClick={() => setCount(count + 1)}>count + 1</button>
+                <br/>
                 <input value={value} onChange={e => setValue(e.target.value)} />
                 <Child callback={callback} />
             </div>

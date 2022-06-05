@@ -6,12 +6,14 @@ import { TUseEffectReturn } from './pages/test_useEffectReturn'
 import { TUseMemo } from './pages/test_useMemo'
 import { TUseCallback } from './pages/test_useCallback'
 import { TCallback2 } from './pages/test_useCb2'
+import { TForwardRef } from './pages/test_forwardRef'
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
+          <Route path='/testForwardRef' element={<TForwardRef />}></Route>
           <Route path='/testRef' element={<TUseRef />} />
           <Route path='/refCount' element={<TRefCount />} />
           <Route path='/testUseEffect' element={<TUseEffect />} />
