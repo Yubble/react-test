@@ -7,12 +7,14 @@ import { TUseMemo } from './pages/test_useMemo'
 import { TUseCallback } from './pages/test_useCallback'
 import { TCallback2 } from './pages/test_useCb2'
 import { TForwardRef } from './pages/test_forwardRef'
+import { TCompDestroy } from './pages/test_componentsDestroy'
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
+          <Route path='/testComDestroy' element={<TCompDestroy />}></Route>
           <Route path='/testForwardRef' element={<TForwardRef />}></Route>
           <Route path='/testRef' element={<TUseRef />} />
           <Route path='/refCount' element={<TRefCount />} />
