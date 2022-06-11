@@ -57,11 +57,11 @@ function GetChildComp () {
 }
 
 // 用于记录全局变量
-function RecordGlobal () {
+function RecordGlobal ({ppp}) {
     const [ count, setCount ] = useState(0)
+    const pRef = useRef(ppp)
     const timer = useRef(null)
     let timer2
-    console.log('出发重复渲染')
 
     useEffect(() => {
         console.log('初始化一次')
@@ -69,6 +69,7 @@ function RecordGlobal () {
           setCount(count => count + 1)
         }, 500)
     
+        console.log('给延时器赋值, timer is ', id)
         timer.current = id
         timer2 = id
         // return () => {
@@ -79,6 +80,7 @@ function RecordGlobal () {
 
     // useCallback首先记录timer2，不会因为函数重复渲染而再次给timer2变量赋值，导致无法停止计时器
     const onClick = useCallback(() => {
+        console.log('useCallback 运行, timer is ', timer2)
         clearInterval(timer2)
     }, [])
 
@@ -92,7 +94,7 @@ function RecordGlobal () {
 
     return (
         <div>
-          点击次数: { count }
+          累加次数: { count }
           <button onClick={onClick}>普通</button>
           <button onClick={onClickRef}>useRef</button>
         </div>
@@ -100,6 +102,11 @@ function RecordGlobal () {
 }
 
 export const TUseRef = () => {
+    const [ppp, setPPP] = useState(111)
+
+    setTimeout(() => {
+        setPPP(333)
+    }, 5000)
     return (
         <div>
             <h2>测试useRef</h2>
@@ -108,7 +115,7 @@ export const TUseRef = () => {
             <p>2、映射子组件实例</p>
             <GetChildComp />
             <p>3、记录全局变量</p>
-            <RecordGlobal />
+            <RecordGlobal ppp = {ppp} />
         </div>
     )
 }

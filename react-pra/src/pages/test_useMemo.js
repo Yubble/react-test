@@ -30,6 +30,7 @@ export const TUseMemo = (props = {}) => {
             <span>此处的expensive计算其实只依赖count</span>
             <div>
                 <button onClick={() => setCount(count + 1)}>点击按钮进行count + 1</button><br/>
+                {/* 此处修改setValue，只会触发expensive1的重复执行，应不会让expensive2再次生成 */}
                 <input value={value} onChange={event => setValue(event.target.value)} />
             </div>
             <p>
