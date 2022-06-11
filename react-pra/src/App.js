@@ -5,6 +5,8 @@ import { TUseEffect } from './pages/test_useEffect'
 import { TUseMemo } from './pages/test_useMemo'
 import { TUseCallback } from './pages/test_useCallback'
 import { TCallback2 } from './pages/test_useCb2'
+import { TuseReducer } from './pages/test_useReducer'
+import { TuseContext } from './pages/test_useContext'
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path='/memo' element={<TUseMemo />} />
           <Route path='/callback' element={<TUseCallback />} />
           <Route path='/callback2' element={<TCallback2 />} />
+          <Route path='/useReducer' element={<TuseReducer />} />
+          <Route path='/useContext' element={<TuseContext />} />
         </Routes>
       </BrowserRouter>
     </div>
