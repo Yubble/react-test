@@ -59,7 +59,7 @@ function GetChildComp () {
 // 用于记录全局变量
 function RecordGlobal ({ppp}) {
     const [ count, setCount ] = useState(0)
-    const pRef = useRef(ppp)
+    // const pRef = useRef(ppp)
     const timer = useRef(null)
     let timer2
 
