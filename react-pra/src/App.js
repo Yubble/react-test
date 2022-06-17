@@ -8,6 +8,7 @@ import { TUseCallback } from './pages/test_useCallback'
 import { TCallback2 } from './pages/test_useCb2'
 import { TForwardRef } from './pages/test_forwardRef'
 import { TCompDestroy } from './pages/test_componentsDestroy'
+import { THOC } from './pages/test_HOC'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path='/memo' element={<TUseMemo />} />
           <Route path='/callback' element={<TUseCallback />} />
           <Route path='/callback2' element={<TCallback2 />} />
+          <Route path='/testHOC' element={<THOC />} />
         </Routes>
       </BrowserRouter>
     </div>
