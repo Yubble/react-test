@@ -2,7 +2,7 @@
  * @Author: Yubble hailen91@qq.com
  * @Date: 2022-06-17 15:50:59
  * @LastEditors: Yubble hailen91@qq.com
- * @LastEditTime: 2022-06-17 16:13:34
+ * @LastEditTime: 2022-06-17 18:12:22
  * @FilePath: /react-test/react-pra/src/pages/test_HOC.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -20,7 +20,8 @@ const withState = WrappedComponent => {
     }
 }
 
-class child1 extends Component {
+@withState
+export class child1 extends Component {
     render() {
         return (
             <div>
@@ -31,4 +32,4 @@ class child1 extends Component {
     }
 }
 
-export const THOC = withState(child1)
+// export const THOC = withState(child1)

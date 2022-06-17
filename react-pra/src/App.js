@@ -6,9 +6,12 @@ import { TUseEffectReturn } from './pages/test_useEffectReturn'
 import { TUseMemo } from './pages/test_useMemo'
 import { TUseCallback } from './pages/test_useCallback'
 import { TCallback2 } from './pages/test_useCb2'
+import { TuseReducer } from './pages/test_useReducer'
+import { TuseContext } from './pages/test_useContext'
 import { TForwardRef } from './pages/test_forwardRef'
 import { TCompDestroy } from './pages/test_componentsDestroy'
 import { THOC } from './pages/test_HOC'
+import { TRender } from './pages/test_render'
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
           <Route path='/callback' element={<TUseCallback />} />
           <Route path='/callback2' element={<TCallback2 />} />
           <Route path='/testHOC' element={<THOC />} />
+          <Route path='/useReducer' element={<TuseReducer />} />
+          <Route path='/useContext' element={<TuseContext />} />
+          <Route path='/testRender' element={<TRender />} />
         </Routes>
       </BrowserRouter>
     </div>

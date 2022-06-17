@@ -35,5 +35,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "babel": {
+    "plugins": [
+      ["@babel/plugin-proposal-decorators", { "legacy": true }]
+    ]
+  },
+  "devDependencies": {
+    "babel-plugin-transform-decorators-legacy": "^1.3.5"
   }
 }
