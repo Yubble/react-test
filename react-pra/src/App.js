@@ -10,8 +10,8 @@ import { TuseReducer } from './pages/test_useReducer'
 import { TuseContext } from './pages/test_useContext'
 import { TForwardRef } from './pages/test_forwardRef'
 import { TCompDestroy } from './pages/test_componentsDestroy'
-import { THOC } from './pages/test_HOC'
 import { TRender } from './pages/test_render'
+import { TUseImmer } from './pages/test_useImmer'
 
 function App() {
   return (
@@ -27,10 +27,10 @@ function App() {
           <Route path='/memo' element={<TUseMemo />} />
           <Route path='/callback' element={<TUseCallback />} />
           <Route path='/callback2' element={<TCallback2 />} />
-          <Route path='/testHOC' element={<THOC />} />
           <Route path='/useReducer' element={<TuseReducer />} />
           <Route path='/useContext' element={<TuseContext />} />
           <Route path='/testRender' element={<TRender />} />
+          <Route path='/testUseImmer' element={<TUseImmer />} />
         </Routes>
       </BrowserRouter>
     </div>

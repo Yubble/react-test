@@ -14,10 +14,13 @@ const baseReducer = (state, action) => {
             return baseInitalState
     }
 }
+const baseInitFn = (initalState) => {
+    return { ...initalState, fate: 'explode' }
+}
 
 const Example1 = () => {
     /*—————————— 简单方法，数值累加 ——————————*/
-    const [state, dispatch] = useReducer(baseReducer, baseInitalState)
+    const [state, dispatch] = useReducer(baseReducer, baseInitalState, baseInitFn)
     return (
         <>
             <h2>数值累加</h2>

@@ -6,7 +6,7 @@ import React, { useState, useCallback, memo } from 'react'
 // }
 const HYButton = memo((props) => {
     console.log("HYButton重新渲染：" + props.title);
-    return <button onClick={props.increment}>HYButton +1</button>
+    return <button onClick={props.increment}>HYButton +1 - {props.title}</button>
 })
 export const TCallback2 = () => {
   console.log("CallbackHookDemo02重新渲染");
@@ -16,6 +16,8 @@ export const TCallback2 = () => {
     console.log("执行increment1函数");
     setCount(count + 1);
   }
+
+  // 只有count发生变化后，increment2才会重新赋值
   const increment2 = useCallback(() => {
     console.log("执行increment2函数");
     setCount(count + 1);
@@ -26,6 +28,7 @@ export const TCallback2 = () => {
       {/* <button onClick={increment1}>+1</button>
       <button onClick={increment2}>+1</button> */}
       <HYButton title="btn1" increment={increment1} />
+      {/* 这里的increment2从来没有更新过 */}
       <HYButton title="btn2" increment={increment2} />
       {
         /*
